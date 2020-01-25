@@ -6,6 +6,10 @@
     <title>I think I can</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script>
+
  </head>
 <body>
     <div class="container" id="header">
@@ -60,7 +64,7 @@
                     </div>
                     <div class="form-group">
                         <label for="firstTrain">First train time (HH:MM-military time)</label>
-                        <input type="time" class="form-control" id="firstTrain">
+                        <input type="number" class="form-control" id="firstTrain">
                       </div>
                       <div class="form-group">
                         <label for="frequency">Frequency</label>
