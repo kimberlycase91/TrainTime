@@ -90,10 +90,18 @@ var trainName = childSnapshot.val().name;
     // Next Train
     var nextTrain = moment().add(tMinutesTillTrain, "minutes");
     console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+
+    var nextTrainPretty =moment(nextTrain).format("hh:mm")
+
+    // Create the new row
+  var newRow = $("<tr>").append(
+    $("<td>").text(trainName),
+    $("<td>").text(trainDestination),
+    $("<td>").text(tFrequency),
+    $("<td>").text(nextTrainPretty),
+    $("<td>").text(tMinutesTillTrain)
+  );
+
+  // Append the new row to the table
+  $("#train-table > tbody").append(newRow);
 })
-
-// Create a way to calculate the months worked. Using difference between start and current time.
-
-//    Then use moment.js formatting to set difference in months.
-
-// Calculate Total billed
