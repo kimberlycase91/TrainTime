@@ -15,6 +15,12 @@
 
   var database = firebase.database();
 
+//display current time on the page
+function update() {
+  $("#clock").html(moment().format('D. MMMM YYYY H:mm:ss'));
+}
+setInterval(update, 1000);
+
 // Create button for adding train + update the database
 $("#add-train-btn").on("click", function(event){
     event.preventDefault();
