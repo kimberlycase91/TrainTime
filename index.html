@@ -1,81 +1,79 @@
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>I think I can</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Where Them Trains At?</title>
 
-<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 
- </head>
+</head>
+
 <body>
-    <div class="container" id="header">
+  <div class="container" id="header">
     <div class="card text-center">
-        <div class="card-header">
-           
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Come on ride the train!</h5>
-          <p class="card-text">Hey, ride it!</p>
-        </div>
-        <div class="card-footer text-muted">
-           
-        </div>
+      <div class="card-header">
+
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Come on ride the train!</h5>
+        <p class="card-text">Hey, ride it!</p>
+      </div>
+      <div class="card-footer text-muted">
+
       </div>
     </div>
-    <div class="container">
-        <div class="row" id="results-table">
-            <div class="col-md-12">
-                <table class="table table-striped">
-                    <thead class="thead-dark">
-                      <tr>
-                        <th scope="col">Train Name</th>
-                        <th scope="col">Destination</th>
-                        <th scope="col">Frequency(min)</th>
-                        <th scope="col">Next Arrival</th>
-                        <th scope="col">Minutes Away</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row"> </th>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                      </tr>
-                    </tbody>
-                  </table>
-            </div>
-        </div>
-        <div class ="row" id = "data-input">
-            <div class="col-md-12">
-                <form>
-                    <div class="form-group">
-                      <label for="trainName">Train Name</label>
-                      <input type="text" class="form-control" id="trainName">
-                    </div>
-                    <div class="form-group">
-                      <label for="destination">Destination</label>
-                      <input type="text" class="form-control" id="destination">
-                    </div>
-                    <div class="form-group">
-                        <label for="firstTrain">First train time (HH:MM-military time)</label>
-                        <input type="number" class="form-control" id="firstTrain">
-                      </div>
-                      <div class="form-group">
-                        <label for="frequency">Frequency</label>
-                        <input type="number" class="form-control" id="frequency">
-                      </div>
-                    <button type="submit" class="btn btn-dark">Submit</button>
-                  </form>
-            </div>
-        </div>
+  </div>
+  <div class="container">
+    <div class="row" id="results-table">
+      <div class="col-md-12">
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Train Name</th>
+              <th scope="col">Destination</th>
+              <th scope="col">Frequency(min)</th>
+              <th scope="col">Next Arrival</th>
+              <th scope="col">Minutes Away</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="app.js"></script>
+    <div class="row" id="data-input">
+      <div class="col-md-12">
+        <form>
+          <div class="form-group">
+            <label for="trainName">Train Name</label>
+            <input type="text" class="form-control" id="train-name">
+          </div>
+          <div class="form-group">
+            <label for="destination">Destination</label>
+            <input type="text" class="form-control" id="destination">
+          </div>
+          <div class="form-group">
+            <label for="firstTrain">First train time (HH:MM-military time)</label>
+            <input type="text" class="form-control" id="first-train">
+          </div>
+          <div class="form-group">
+            <label for="frequency">Frequency</label>
+            <input type="number" class="form-control" id="frequency">
+          </div>
+          <button type="submit" class="btn btn-dark" id="add-train-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="assets/app.js"></script>
 </body>
+
 </html>
